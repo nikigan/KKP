@@ -1,0 +1,26 @@
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+text-align: left;
+border-collapse: separate;
+border-spacing: 5px;
+background: #C2DEEB;
+color: #656665;
+border: 16px solid #C2DEEB;
+border-radius: 20px;
+}
+th {
+font-size: 18px;
+padding: 10px;
+}
+td {
+background: #E7E5E5;
+padding: 10px;
+box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
+}
+h2{
+    margin: -30px 0px;
+}
+.name{
+    color:white;
+    text-shadow: 0 2px 5px #2D2020;
+}
