@@ -12,39 +12,63 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background: #e3f2fd;">
-    <div class="d-flex w-100 order-0">
+    <div class="d-flex w-50 order-0">
     <a class="navbar-brand ml-1" href="#" style="font-weight: bold">Деканат</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-center order-2" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="mainPage.html">Общая информация</a>
+        <ul class="navbar-nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active text-light" href="mainPage.html">Общая информация</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="zachet.html">Зачетная книжка</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Одногруппники</a>
+                <a class="nav-link" href="">Одногруппники</a>
             </li>
         </ul>
     </div>
     </div>
 </nav>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h3 id="name"></h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/200.jpg" class="img-responsive"> </div>
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Группа:</td>
+                            <td id="group"></td>
+                        </tr>
+                        <tr>
+                            <td>Дата рождения:</td>
+                            <td id="birthday"></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td id="email"></td>
+                        </tr>
+                        <tr>
+                            <td>Номер студенческого билета:</td>
+                            <td id="recordBook"></td>
+                        </tr>
 
-<div class="container-fluid">
-    <div class="row justify-content-start align-items-start">
-        <ul class="col-5 list-group text-center align-self-start m-3">
-            <li class="list-group-item" id="name"><span class="justify-content-start">Имя: </span></li>
-            <li class="list-group-item" id="group"></li>
-            <li class="list-group-item" id="birthday"></li>
-            <li class="list-group-item" id="email"></li>
-            <li class="list-group-item" id="recordBook"></li>
-        </ul>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 
 <script src="js/jquery-3.4.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
