@@ -1,7 +1,12 @@
 let userToken = window.localStorage.getItem('userToken');
 let studObj = {
     birthday: undefined,
-
+    email: undefined,
+    groupname: undefined,
+    name: undefined,
+    surname: undefined,
+    patronymic: undefined,
+    recordbook: undefined
     };
 
 getData();
