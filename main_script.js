@@ -7,10 +7,9 @@ let studObj = {
     surname: undefined,
     patronymic: undefined,
     recordbook: undefined
-    };
+};
 
 getData();
-groupMates();
 
 function getData() {
     $.ajax({
@@ -29,9 +28,8 @@ function getData() {
         dataType: 'json'
     })
         .done(function (data) {
-            console.log(data);
-            studObj = data.student;
-            fillFields(studObj);
+            fillFields(data.student);
+            return data.student;
         });
 }
 
@@ -64,5 +62,64 @@ function groupMates() {
         });
 }
 
+function getSemesters() {
+    $.ajax({
+        type: "POST",
+        url: url + "student/semesters",
+        data: JSON.stringify({
+            text: '',
+            userToken: userToken
+        }),
+        contentType: "application/json",
+        converters: {
+            "* json": function (text) {
+                return $.parseJSON(text);
+            }
+        },
+        dataType: 'json'
+    })
+        .done(function (data) {
+            return data;
+        });
+}
+
+
+function getMarks() {
+    $.ajax({
+        type: "POST",
+        url: url + "student/semesters",
+        data: JSON.stringify({
+            text: '',
+            userToken: userToken
+        }),
+        contentType: "application/json",
+        converters: {
+            "* json": function (text) {
+                return $.parseJSON(text);
+            }
+        },
+        dataType: 'json'
+    })
+        .done(function (data) {
+            $.ajax({
+                type: "POST",
+                url: url + "student/rating",
+                data: JSON.stringify({
+                    semester: data.studentSemesters[0].idLGS,
+                    userToken: userToken
+                }),
+                contentType: "application/json",
+                converters: {
+                    "* json": function (text) {
+                        return $.parseJSON(text);
+                    }
+                },
+                dataType: 'json'
+            })
+                .done(function (data) {
+                    return data.raitings;
+                });
+        });
+}
 
 
